@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wfuhui.modules.market.dao.MassDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+	<resultMap type="com.wfuhui.modules.market.entity.MassEntity" id="massMap">
+		<result property="id" column="id"/>
+		<result property="massName" column="mass_name"/>
+		<result property="contacts" column="contacts"/>
+		<result property="mobile" column="mobile"/>
+		<result property="remark" column="remark"/>
+		<result property="picUrl" column="pic_url"/>
+		<result property="createTime" column="create_time"/>
+	</resultMap>
+
+	<select id="queryObject" resultType="com.wfuhui.modules.market.entity.MassEntity">
+		select * from a_mass where id = #{value}
+	</select>
+
+	<select id="queryList" resultType="com.wfuhui.modules.market.entity.MassEntity">
+		select * from a_mass
+		<choose>
+			<when test="sidx != null and sidx.trim() != ''">
+				order by ${sidx} ${order}
+			</when>
+			<otherwise>
+				order by id desc
+			</otherwise>
+		</choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+
+	<select id="queryTotal" resultType="int">
+		select count(*) from a_mass
+	</select>
+
+	<insert id="save" parameterType="com.wfuhui.modules.market.entity.MassEntity" useGeneratedKeys="true" keyProperty="id">
+		insert into a_mass
+		(
+			`mass_name`,
+			`contacts`,
+			`mobile`,
+			`remark`,
+			`pic_url`,
+			`create_time`
+		)
+		values
+		(
+			#{massName},
+			#{contacts},
+			#{mobile},
+			#{remark},
+			#{picUrl},
+			#{createTime}
+		)
+	</insert>
+
+	<update id="update" parameterType="com.wfuhui.modules.market.entity.MassEntity">
+		update a_mass
+		<set>
+			<if test="massName != null">`mass_name` = #{massName}, </if>
+			<if test="contacts != null">`contacts` = #{contacts}, </if>
+			<if test="mobile != null">`mobile` = #{mobile}, </if>
+			<if test="remark != null">`remark` = #{remark}, </if>
+			<if test="picUrl != null">`pic_url` = #{picUrl}, </if>
+			<if test="createTime != null">`create_time` = #{createTime}</if>
+		</set>
+		where id = #{id}
+	</update>
+
+	<delete id="delete">
+		delete from a_mass where id = #{value}
+	</delete>
+
+	<delete id="deleteBatch">
+		delete from a_mass where id in
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

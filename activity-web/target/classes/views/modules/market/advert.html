@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>广告管理</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.bootcss.com/admin-lte/2.3.8/css/AdminLTE.min.css">
+<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.bootcss.com/blueimp-file-upload/9.31.0/css/jquery.fileupload.min.css">
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css">
+<link rel="stylesheet" href="https://cdn.bootcss.com/admin-lte/2.3.8/css/skins/_all-skins.min.css">
+<link rel="stylesheet" href="../../../css/main.css">
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div id="rrapp" v-cloak class="wrapper">
+  <main-header></main-header>
+  <main-sidebar></main-sidebar>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <content-header title="广告管理"></content-header>
+    <!-- Main content -->
+    <section class="content">
+	<div v-show="showList">
+		<div class="box">
+			<div class="box-header with-border">
+              <h3 class="box-title">列表</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+				<div class="form-group">
+					<a v-if="hasPermission('advert:save')" class="btn btn-primary" @click="add"><i class="fa fa-plus"></i>&nbsp;新增</a>
+					<a v-if="hasPermission('advert:update')" class="btn btn-warning" @click="update"><i class="fa fa-pencil-square-o"></i>&nbsp;修改</a>
+					<a v-if="hasPermission('advert:delete')" class="btn btn-danger" @click="del"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+				</div>
+			    <table id="table"></table>
+			</div>
+		</div>
+    </div>
+    
+    <div v-show="!showList">
+		<div class="box">
+			<div class="box-header with-border">
+              <h3 class="box-title">{{title}}</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+				<form class="form-horizontal">
+					<div class="form-group">
+					   	<div class="col-sm-2 control-label">图片<span class="text-danger">*</span></div>
+					   	<div class="col-sm-7">
+					        <!-- The fileinput-button span is used to style the file input field as button -->
+						    <span class="btn btn-success fileinput-button">
+						        <i class="glyphicon glyphicon-plus"></i>
+						        <span>选择图片...</span>
+						        <!-- The file input field used as target for the file upload widget -->
+						        <input id="fileupload" type="file" name="file" multiple>
+						    </span>
+						   	 建议750*300px;200kb以内
+						    <br>
+						    <!-- The container for the uploaded files -->
+						    <div id="files" class="files">
+						    	<div>
+						    		<img id="picUrl" alt="" width="200px" v-bind:src="advert.picUrl">
+						    		<input name="picUrl" type="hidden" v-model="advert.picUrl"/>
+						    	</div>
+						    </div>
+					    </div>
+					</div>
+					<div class="form-group">
+					   	<div class="col-sm-2 control-label">位置</div>
+					   	<div class="col-sm-7">
+					      <select class="form-control" v-model="advert.position">
+					      	<option value="">--请选择位置--</option>
+					      	<option :value="position.key" v-for="position in positions">{{position.value}}</option>
+					      </select>
+					    </div>
+					</div>
+					<div class="form-group">
+					   	<div class="col-sm-2 control-label">链接</div>
+					   	<div class="col-sm-7">
+					      <input class="form-control" v-model="advert.link" placeholder="链接"/>
+					      <!-- <select class="form-control" @change="changeLink">
+					      	<option value="">--请选择链接--</option>
+					      	<option value="article">文章</option>
+					      	<option value="goods">商品</option>
+					      </select> -->
+					    </div>
+					</div>
+					<div class="form-group">
+					   	<div class="col-sm-2 control-label">排序</div>
+					   	<div class="col-sm-7">
+					      <input type="number" class="form-control" v-model.number="advert.sort" placeholder="排序"/>
+					    </div>
+					</div>
+					<div class="form-group">
+					   	<div class="col-sm-2 control-label">状态<span class="text-danger">*</span></div>
+					   	<div class="col-sm-7">
+		                    <label class="radio-inline">
+		                      <input name="enable" type="radio" value="1" v-model="advert.enable">启用
+		                    </label>
+		                    <label class="radio-inline">
+		                      <input name="enable" type="radio" value="0" v-model="advert.enable">禁用
+		                    </label>
+					    </div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-2 control-label"></div> 
+						<input type="button" class="btn btn-primary" @click="saveOrUpdate" value="确定"/>
+						&nbsp;&nbsp;<input type="button" class="btn btn-warning" @click="reload" value="返回"/>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	</section>
+  </div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
+<script src="https://cdn.bootcss.com/sweetalert/2.1.2/sweetalert.min.js"></script>
+<script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/vue/2.2.6/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-file-upload/9.31.0/js/vendor/jquery.ui.widget.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-file-upload/9.31.0/js/jquery.fileupload.min.js"></script>
+<script src="https://cdn.bootcss.com/admin-lte/2.3.8/js/app.min.js"></script>
+<script src="../../js/components.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../js/modules/market/advert.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	// Change this to the location of your server-side upload handler:
+    var url = "/app/fileupload/uploadimg/x";
+    $('#fileupload').fileupload({
+        url: url,
+        dataType: 'json',
+        acceptFileTypes:  /(\.|\/)(gif|jpe?g|png)$/i,
+        maxFileSize: 204800,
+        done: function (e, data) {
+            if(data.result.code == 0){
+            	$("#picUrl").attr("src", data.result.url);
+            	vm.advert.picUrl = data.result.url;
+            }
+        }
+    }).prop('disabled', !$.support.fileInput)
+        .parent().addClass($.support.fileInput ? undefined : 'disabled');
+})
+</script>
+</body>
+</html>

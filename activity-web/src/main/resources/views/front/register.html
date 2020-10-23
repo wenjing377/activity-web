@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>注册</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/carousel.css" rel="stylesheet">
+    <link href="assets/css/city-picker.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/common.css" rel="stylesheet">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box" id="rrapp" v-cloak>
+    <div class="login-logo">
+        <b>注册</b>
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+        <p class="login-box-msg">用户注册</p>
+        <div v-if="error" class="alert alert-danger alert-dismissible">
+            <h4 style="margin-bottom: 0px;"><i class="fa fa-exclamation-triangle"></i> {{errorMsg}}</h4>
+        </div>
+        <div class="form-group has-feedback">
+            <input type="text" class="form-control" v-model="loginName" placeholder="昵称">
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+            <input type="password" class="form-control" v-model="password" placeholder="密码">
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+            <input type="text" class="form-control" v-model="realName" placeholder="姓名">
+        </div>
+        <div class="form-group has-feedback">
+            <input type="text" class="form-control" v-model="userNo" placeholder="学号">
+        </div>
+        <div class="form-group has-feedback">
+            <label class="radio-inline">
+                <input type="radio" name="status" value="0" v-model="gender"/> 女
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="status" value="1" v-model="gender"/> 男
+            </label>
+        </div>
+        <div class="form-group has-feedback">
+            <select class="form-control" v-model="schoolName">
+                <option value="">--请选择学院--</option>
+                <option value="文学院">文学院</option>
+                <option value="教育学院">教育学院</option>
+                <option value="心理学院">心理学院</option>
+                <option value="音乐学院">音乐学院</option>
+                <option value="美术学院">美术学院</option>
+                <option value="国际汉学院">国际汉学院</option>
+                <option value="体育学院">体育学院</option>
+                <option value="国际商学院">国际商学院</option>
+                <option value="外国语学院">外国语学院</option>
+                <option value="计算机科学学院">计算机科学学院</option>
+                <option value="化学化工学院">化学化工学院</option>
+                <option value="历史文化学院">历史文化学院</option>
+                <option value="数学与信息科学学院">数学与信息科学学院</option>
+                <option value="物理学与信息科学学院">物理学与信息科学学院</option>
+                <option value="生命科学学院">生命科学学院</option>
+                <option value="新闻与传播学院">新闻与传播学院</option>
+                <option value="食品工程与营养科学学院">食品工程与营养科学学院</option>
+                <option value="哲学与政府管理学院">哲学与政府管理学院</option>
+                <option value="地理科学与旅游学院">地理科学与旅游学院</option>
+            </select>
+        </div>
+        <div class="form-group has-feedback">
+            <input type="text" class="form-control" v-model="className" placeholder="班级">
+        </div>
+        <div class="form-group has-feedback">
+            <input type="text" class="form-control" v-model="mobile" placeholder="手机号码">
+        </div>
+        <div class="form-group has-feedback">
+            <input type="text" class="form-control" v-model="email" placeholder="邮箱">
+        </div>
+        <div class="form-group has-feedback" hidden="true">
+            <div class="row">
+                <!-- /.col -->
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" v-model="captcha" @keyup.enter="login" placeholder="验证码">
+                </div>
+                <div class="col-xs-4">
+                    <img alt="如果看不清楚，请单击图片刷新！" class="pointer" :src="src" @click="refreshCode" style="width: 100%; height: 34px">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group has-feedback">
+            <div class="row">
+                <!-- /.col -->
+                <div class="col-xs-12">
+                    <button type="button" class="btn btn-primary btn-block btn-flat" @click="login">注册</button>
+                </div>
+                <!-- /.col -->
+            </div>
+        </div>
+        <!-- /.social-auth-links -->
+
+    </div>
+    <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="https://cdn.bootcss.com/vue/2.6.8/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+<script src="assets/js/vendor/holder.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="assets/js/city-picker.data.js"></script>
+<script src="assets/js/city-picker.js"></script>
+<script src="assets/js/common.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+        el:'#rrapp',
+        data:{
+            loginName: '',
+            password: '',
+            realName: '',
+            gender: '',
+            mobile: '',
+            captcha: '',
+            idCard: '',
+            address: '',
+            userNo: '',
+            schoolName: '',
+            className: '',
+            error: false,
+            errorMsg: '',
+            email: '',
+            src: 'captcha.jpg'
+        },
+        beforeCreate: function(){
+            if(self != top){
+                top.location.href = self.location.href;
+            }
+        },
+        methods: {
+            refreshCode: function(){
+                this.src = "captcha.jpg?t=" + $.now();
+            },
+            login: function () {
+                var address = $("#city-picker").val();
+                var data = "loginName="+vm.loginName+"&password="+vm.password+"&gender="+vm.gender+"&email="+vm.email+"&realName="+vm.realName+"&mobile="+vm.mobile + "&className="+vm.className + "&idCard="+vm.idCard +"&address="+address + "&schoolName=" + vm.schoolName+"&userNo=" + vm.userNo;
+                 $.ajax({
+                    type: "POST",
+                    url: domain + "/api/register",
+                    data: data,
+                    dataType: "json",
+                    success: function(r){
+                        if(r.code == 0){//登录成功
+                            parent.location.href ='login.html';
+                        }else{
+                            vm.error = true;
+                            vm.errorMsg = r.msg;
+                            //vm.refreshCode();
+                        }
+                    }
+                });
+            }
+        }
+    });
+</script>
+</body>
+</html>

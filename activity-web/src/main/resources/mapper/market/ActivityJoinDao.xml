@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wfuhui.modules.market.dao.ActivityJoinDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.wfuhui.modules.market.entity.ActivityJoinEntity" id="activityJoinMap">
+        <result property="id" column="id"/>
+        <result property="memberId" column="member_id"/>
+        <result property="activityId" column="activity_id"/>
+        <result property="createTime" column="create_time"/>
+        <result property="status" column="status"/>
+        <result property="realName" column="real_name"/>
+        <result property="mobile" column="mobile"/>
+        <result property="age" column="age"/>
+        <result property="schoolId" column="school_id"/>
+        <result property="channelId" column="channel_id"/>
+        <result property="storeId" column="store_id"/>
+        <result property="schoolName" column="school_name"/>
+        <result property="channelName" column="channel_name"/>
+        <result property="address" column="address"/>
+		<result property="massName" column="mass_name"/>
+		<result property="volunteerTime" column="volunteer_time"/>
+
+    </resultMap>
+
+	<select id="queryObject" resultType="com.wfuhui.modules.market.entity.ActivityJoinEntity">
+		select * from a_activity_join where id = #{value}
+	</select>
+	
+	<select id="query" resultType="com.wfuhui.modules.market.entity.ActivityJoinEntity">
+		select * from a_activity_join where activity_id = #{activityId} and member_id = #{memberId}
+	</select>
+	
+	<select id="queryByMobile" resultType="com.wfuhui.modules.market.entity.ActivityJoinEntity">
+		select * from a_activity_join where mobile = #{mobile} and activity_id = #{activityId}
+	</select>
+
+	<select id="queryList" resultType="com.wfuhui.modules.market.entity.ActivityJoinEntity">
+		select j.*, a.title as 'activity.title', a.mass_name as 'activity.massName',a.volunteer_time as 'activity.volunteerTime',a.pic_url as 'activity.picUrl', a.begin_time as 'activity.beginTime', u.real_name as 'user.realName', u.mobile as 'user.mobile'
+		from a_activity_join j
+		left join a_activity a on a.id = j.activity_id
+		left join base_user u on u.id = j.member_id
+		<where>
+			<if test="memberId != null">
+				and j.member_id = #{memberId}
+			</if>
+			<if test="activityId != null and activityId != ''">
+				and j.activity_id = #{activityId}
+			</if>
+			<if test="massName != null">
+				and a.mass_name = #{massName}
+			</if>
+		</where>
+		<choose>
+			<when test="sidx != null and sidx.trim() != ''">
+				order by ${sidx} ${order}
+			</when>
+			<otherwise>
+				order by j.id desc
+			</otherwise>
+		</choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="queryTotal" resultType="int">
+		select count(1)
+		from a_activity_join j
+        left join a_activity a on a.id = j.activity_id
+		<where>
+        	<if test="memberId != null">
+        		and j.member_id = #{memberId}
+        	</if>
+        	<if test="activityId != null and activityId != ''">
+        		and j.activity_id = #{activityId}
+        	</if>
+        	<if test="storeId != null">
+        		and a.store_id = #{storeId}
+        	</if>
+        </where>
+	</select>
+	 
+	<insert id="save" parameterType="com.wfuhui.modules.market.entity.ActivityJoinEntity" useGeneratedKeys="true" keyProperty="id">
+		insert into a_activity_join
+		(
+			`member_id`, 
+			`activity_id`, 
+			`real_name`, 
+			`mobile`, 
+			`age`, 
+			`channel_id`, 
+			`school_id`, 
+			`create_time`, 
+			`address`, 
+			`store_id`
+		)
+		values
+		(
+			#{memberId}, 
+			#{activityId}, 
+			#{realName}, 
+			#{mobile}, 
+			#{age}, 
+			#{channelId}, 
+			#{schoolId}, 
+			#{createTime}, 
+			#{address}, 
+			#{storeId}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.wfuhui.modules.market.entity.ActivityJoinEntity">
+		update a_activity_join 
+		<set>
+			<if test="memberId != null">`member_id` = #{memberId}, </if>
+			<if test="activityId != null">`activity_id` = #{activityId}, </if>
+			<if test="createTime != null">`create_time` = #{createTime}, </if>
+			<if test="status != null">`status` = #{status}, </if>
+			<if test="storeId != null">`store_id` = #{storeId}</if>
+		</set>
+		where id = #{id}
+	</update>
+	
+	<delete id="delete">
+		delete from a_activity_join where id = #{value}
+	</delete>
+	
+	<delete id="deleteBatch">
+		delete from a_activity_join where id in 
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+	<update id="changestatus">
+		update form a_activity_join
+		<set>
+			`status` = 1
+		</set>
+		where id = #{id}
+	</update>
+
+	<update id="changestatusBatch">
+		update form a_activity_join
+		<set>
+			`status` = 1
+		</set>
+		where id in
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</update>
+</mapper>

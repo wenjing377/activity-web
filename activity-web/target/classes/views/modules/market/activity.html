@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>活动</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.css">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/admin-lte/2.3.8/css/AdminLTE.min.css">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/blueimp-file-upload/9.31.0/css/jquery.fileupload.min.css">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/admin-lte/2.3.8/css/skins/_all-skins.min.css">
+	<link href="https://cdn.bootcss.com/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../../css/main.css">
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div id="rrapp" v-cloak class="wrapper">
+	<main-header></main-header>
+	<main-sidebar></main-sidebar>
+	<!-- Content Wrapper. Contains page content -->
+	<div class="content-wrapper">
+		<!-- Content Header (Page header) -->
+		<content-header title="活动管理"></content-header>
+		<!-- Main content -->
+		<section class="content">
+			<div v-show="showList">
+				<div class="box">
+					<div class="box-header with-border">
+						<h3 class="box-title">列表</h3>
+					</div><!-- /.box-header -->
+					<div class="box-body">
+						<div class="form-group">
+							<a v-if="hasPermission('activity:save')" class="btn btn-primary" @click="add"><i class="fa fa-plus"></i>&nbsp;新增</a>
+							<a v-if="hasPermission('activity:update')" class="btn btn-warning" @click="update"><i class="fa fa-pencil-square-o"></i>&nbsp;修改</a>
+							<a v-if="hasPermission('activity:delete')" class="btn btn-danger" @click="del"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+						</div>
+						<table id="table"></table>
+					</div>
+				</div>
+			</div>
+
+			<div v-show="!showList">
+				<div class="box">
+					<div class="box-header with-border">
+						<h3 class="box-title">{{title}}</h3>
+					</div><!-- /.box-header -->
+					<div class="box-body">
+						<form class="form-horizontal">
+							<div class="form-group">
+								<div class="col-sm-2 control-label">图片<span class="text-danger">*</span></div>
+								<div class="col-sm-7">
+									<!-- The fileinput-button span is used to style the file input field as button -->
+									<span class="btn btn-success fileinput-button">
+				        <i class="glyphicon glyphicon-plus"></i>
+				        <span>选择图片...</span>
+										<!-- The file input field used as target for the file upload widget -->
+				        <input id="fileupload" type="file" name="file" multiple>
+				    </span>
+									建议750*300px;200kb以内
+									<br>
+									<!-- The container for the uploaded files -->
+									<div id="files" class="files">
+										<div>
+											<img id="picUrl" alt="" width="200px" v-bind:src="activity.picUrl">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-2 control-label">标题</div>
+								<div class="col-sm-7">
+									<input type="text" class="form-control" v-model="activity.title" placeholder="标题"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-2 control-label">主办社团名称</div>
+								<div class="col-sm-7">
+									<select class="form-control" v-model="activity.massName">
+										<option value="">--请选择社团--</option>
+										<option value="阳光青协社">阳光青协社</option>
+										<option value="志翔社">志翔社</option>
+										<option value="龙传公益社">龙传公益社</option>
+										<option value="荧光社">荧光社</option>
+										<option value="海燕爱心社">海燕爱心社</option>
+										<option value="东方志愿者协会">东方志愿者协会</option>
+										<option value="爱云支教协会">爱云支教协会</option>
+										<option value="狗狗托儿所">狗狗托儿所</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-2 control-label">学院名称</div>
+								<div class="col-sm-7">
+									<select class="form-control" v-model="activity.schoolName">
+										<option value="">--请选择学院--</option>
+										<option value="文学院">文学院</option>
+										<option value="教育学院">教育学院</option>
+										<option value="心理学院">心理学院</option>
+										<option value="音乐学院">音乐学院</option>
+										<option value="美术学院">美术学院</option>
+										<option value="国际汉学院">国际汉学院</option>
+										<option value="体育学院">体育学院</option>
+										<option value="国际商学院">国际商学院</option>
+										<option value="外国语学院">外国语学院</option>
+										<option value="计算机科学学院">计算机科学学院</option>
+										<option value="化学化工学院">化学化工学院</option>
+										<option value="历史文化学院">历史文化学院</option>
+										<option value="数学与信息科学学院">数学与信息科学学院</option>
+										<option value="物理学与信息科学学院">物理学与信息科学学院</option>
+										<option value="生命科学学院">生命科学学院</option>
+										<option value="新闻与传播学院">新闻与传播学院</option>
+										<option value="食品工程与营养科学学院">食品工程与营养科学学院</option>
+										<option value="哲学与政府管理学院">哲学与政府管理学院</option>
+										<option value="地理科学与旅游学院">地理科学与旅游学院</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-2 control-label">招募校区</div>
+								<div class="col-sm-7">
+									<label class="radio-inline">
+										<input name="adress" type="radio" value="1" v-model="activity.adress">长安校区
+									</label>
+									<label class="radio-inline">
+										<input name="adress" type="radio" value="2" v-model="activity.adress">雁塔校区
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-2 control-label">活动类型</div>
+								<div class="col-sm-7">
+									<label class="radio-inline">
+										<input name="type" type="radio" value="1" v-model="activity.type">线上
+									</label>
+									<label class="radio-inline">
+										<input name="type" type="radio" value="2" v-model="activity.type">线下
+									</label>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-sm-2 control-label">服务类别</div>
+								<div class="col-sm-7">
+									<label class="radio-inline">
+										<input name="category" type="radio" value="1" v-model="activity.category">流浪动物保护
+									</label>
+									<label class="radio-inline">
+										<input name="category" type="radio" value="2" v-model="activity.category">关爱空巢老人
+									</label>
+									<label class="radio-inline">
+										<input name="category" type="radio" value="3" v-model="activity.category">募捐活动
+									</label>
+									<label class="radio-inline">
+										<input name="category" type="radio" value="4" v-model="activity.category">大学生支教
+									</label>
+									<label class="radio-inline">
+										<input name="category" type="radio" value="5" v-model="activity.category">其他
+									</label>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-sm-2 control-label">开始时间</div>
+								<div class="col-sm-7">
+									<input type="text" id="start" class="form-control" v-model="activity.beginTime" placeholder="开始时间"/>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-sm-2 control-label">结束时间</div>
+								<div class="col-sm-7">
+									<input type="text" id="end" class="form-control" v-model="activity.endTime" placeholder="结束时间"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-2 control-label">活动人数</div>
+								<div class="col-sm-7">
+									<input type="text" class="form-control" v-model="activity.totalNumber" placeholder="活动人数"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-2 control-label">志愿服务时间</div>
+								<div class="col-sm-7">
+									<input type="text" id="volunteerTime" class="form-control" v-model="activity.volunteerTime" placeholder="志愿服务时间"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-2 control-label">状态</div>
+								<div class="col-sm-7">
+									<label class="radio-inline">
+										<input name="enable" type="radio" value="1" v-model="activity.status">正常
+									</label>
+									<label class="radio-inline">
+										<input name="enable" type="radio" value="2" v-model="activity.status">结束
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-2 control-label">活动内容</div>
+								<div class="col-sm-7">
+									<script id="container" type="text/plain">
+									</script>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-sm-2 control-label"></div>
+								<input type="button" class="btn btn-primary" @click="saveOrUpdate" value="确定"/>
+								&nbsp;&nbsp;<input type="button" class="btn btn-warning" @click="reload" value="返回"/>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
+<script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/vue/2.2.6/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-file-upload/9.31.0/js/vendor/jquery.ui.widget.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-file-upload/9.31.0/js/jquery.fileupload.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+<script src="https://cdn.bootcss.com/admin-lte/2.3.8/js/app.min.js"></script>
+<script src="../../../plugins/ueditor/ueditor.config.js"></script>
+<script src="../../../plugins/ueditor/ueditor.all.min.js"></script>
+<script src="../../js/components.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../js/modules/market/activity.js"></script>
+<script type="text/javascript">
+	var ue = UE.getEditor('container',{
+		toolbars: [
+			['fullscreen', 'source', 'undo', 'redo', 'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', 'link', 'simpleupload', 'justifyleft', 'justifyright', 'justifycenter', 'fontfamily', 'fontsize']
+		],
+		autoHeightEnabled: true,
+		autoFloatEnabled: true,
+		initialFrameHeight: 400
+	});
+	$(function(){
+		$('#end').datepicker({
+			minView: "month",
+			autoclose:true,
+			format : 'yyyy-mm-dd'
+		});
+		$('#start').datepicker({
+			minView: "month",
+			autoclose:true,
+			format : 'yyyy-mm-dd'
+		});
+
+		/*var expiryDate = dayjs(item.EXPIRY_DATE).format('YYYY-MM-DD');
+        var today = new Date();
+        var today_time = dayjs(today).format('YYYY-MM-DD');
+        if (today_time > expiryDate) {
+            uni.showModal({
+                content: this.l('Membership No. had expired,continue or not?'),
+                success: function(res) {
+                    if (res.confirm) {
+                        uni.$emit('selectVip', item);
+                        uni.navigateBack({});
+                    }
+                }
+            });
+        } else {
+            uni.$emit('selectVip', item);
+            uni.navigateBack({});
+        }*/
+
+		// Change this to the location of your server-side upload handler:
+		var url = "/api/fileupload/upload";
+		$('#fileupload').fileupload({
+			url: url,
+			dataType: 'json',
+			acceptFileTypes:  /(\.|\/)(gif|jpe?g|png)$/i,
+			maxFileSize: 204800,
+			done: function (e, data) {
+				if(data.result.code == 0){
+					$("#picUrl").attr("src", data.result.url);
+					vm.activity.picUrl = data.result.url;
+				}
+			}
+		}).prop('disabled', !$.support.fileInput)
+				.parent().addClass($.support.fileInput ? undefined : 'disabled');
+
+		$('#rfileupload').fileupload({
+			url: url,
+			dataType: 'json',
+			acceptFileTypes:  /(\.|\/)(gif|jpe?g|png)$/i,
+			maxFileSize: 204800,
+			done: function (e, data) {
+				if(data.result.code == 0){
+					$("#rpicUrl").attr("src", data.result.url);
+					vm.activity.resultPicUrl = data.result.url;
+				}
+			}
+		}).prop('disabled', !$.support.fileInput)
+				.parent().addClass($.support.fileInput ? undefined : 'disabled');
+	})
+
+</script>
+</body>
+</html>

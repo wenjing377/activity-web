@@ -1,0 +1,44 @@
+body{
+  padding-top: 50px;
+}
+
+.goods-item{
+	cursor: pointer;
+}
+.jumbotron{
+	background: #6d3353;
+	text-align: center;
+	color: #fff;
+}
+
+.content img{
+	max-width: 100%;
+}
+.login-page, .register-page {
+    background-image: url("../image/background.jpg");
+
+}
+.login-box-body, .reg-box-body{
+	margin: 0 auto;
+	width: 360px;
+}
+.login-box-body, .register-box-body {
+    background: #fff;
+    padding: 20px;
+    border-top: 0;
+    color: black;
+}
+.login-logo, .register-logo {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+.price{
+	color: #d9534f
+}
+
+.page{
+	float: right;
+}

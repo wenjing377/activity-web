@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="Star爱心志愿平台">
+    <meta name="baidu-site-verification" content="PLcIgMGOd5" />
+    <link rel="shortcut icon" href="http://wfuhui.com/favicon.ico" type="image/x-icon">
+
+    <title>Star爱心志愿平台</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/carousel.css" rel="stylesheet">
+    <link href="assets/css/common.css" rel="stylesheet">
+    <style type="text/css">
+      body{
+      	padding-top:70px;
+      }
+      .footer{
+        background-color: #e7e7e7;
+        position:relative;
+        height: 60px;
+        margin-bottom: -100px;
+        margin-top:105px;
+      }
+      .p1{
+        text-align: center;
+        line-height: 50px;
+        color: #333333;
+      }
+      .position1{
+        margin-top: 100px;
+        margin-left: 350px;
+        font-size: large;
+      }
+      .h31{
+        margin-top: -10px;
+        margin-left: 20px;
+      }
+    </style>    
+
+  </head>
+  <!-- NAVBAR -->
+  <body>
+    <div id="app">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Star爱心志愿平台</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+	        <li><a href="index.html">首页 </a></li>
+	        <li class="active"><a href="list.html">志愿活动</a></li>
+	        <li><a href="#">志愿组织</a></li>
+            <li><a href="#">志愿之星</a></li>
+	      </ul>
+          <ul class="nav navbar-nav navbar-right hidden-sm">
+            <li v-if="user"><a href="user.html">个人中心，{{user.realName}}</a></li>
+            <li v-if="user"><a href="#" @click="logout()" >退出</a></li>
+            <li v-if="!user"><a href="login.html" >登陆</a></li>
+            <li v-if="!user"><a href="register.html" >注册</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+      <div class="position1">
+    <div class="container marketing">
+      <!-- Three columns of text below the carousel-->
+      <div class="row">
+        <div class="col-md-4">
+          <div class="thumbnail">
+          	<img :src="activity.picUrl"  width="400" height="300" style="width: 400px;height: 300px">
+          </div>
+        </div>
+        <div class="col-md-8" style="padding-top: 20px">
+          <h3>{{activity.title}}</h3>
+          <p>社团名称：{{activity.massName}}</p>
+          <p>学院名称：{{activity.schoolName}}</p>
+          <p>招募人数：<span class="price">{{activity.totalNumber}}</span>人</p>
+          <p>已报名人数：<span class="price">{{activity.joinNumber}}</span>人</p>
+          <p>志愿服务时间：<span class="price">{{activity.volunteerTime}}</span>小时</p>
+          <p>活动开始日期：{{activity.beginTime}}</p>
+          <p>活动结束日期：{{activity.endTime}}</p>
+          <p>
+          <button type="button" class="btn btn-primary" id=join @click="buy" >立即报名</button>
+          </p>
+        </div><!-- /.col-md-3 -->
+      </div><!-- /.row -->
+
+      <div class="row">
+        <h3 class="h31">活动简介</h3>
+        <div class="col-md-12 content" v-html="activity.content"></div>
+      </div>
+    </div>
+    </div>
+    <!-- FOOTER -->
+    <footer style="text-align: center">
+      <p></p>
+    </footer>
+    <footer class="footer">
+        <p class="p1">Copyright@2020-2021 Designed by DUOLAAIMENGDUI</p>
+    </footer>
+  </div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdn.bootcss.com/vue/2.6.8/vue.min.js"></script>
+  <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+  <script src="assets/js/vendor/holder.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+  <script src="assets/js/common.js"></script>
+	<script>   
+    
+	var app = new Vue({
+	  el: '#app',
+	  data: {
+		activity: {},
+        user: null
+	  },
+      methods: {
+        getActivity: function(id){
+          $.getJSON(domain + "/api/activity/detail", {id: id, storeId: storeId}, function(r){
+            if(r.code == 0){
+              app.activity = r.activity;
+            }
+            if(app.activity.joinNumber == app.activity.totalNumber){
+              var stamp = document.getElementById("join");//设置盖章按钮为不可用
+              stamp.disabled=true;
+            }
+          })
+        },
+        buy: function(){
+            var data = {
+              storeId: app.activity.storeId,
+              activityId: app.activity.id
+            }
+          $.ajax({
+            type: "POST",
+              url: domain + "/api/activity/join",
+              contentType: "application/json",
+              headers: {
+                token: localStorage.getItem("ftoken")
+              },
+              data: JSON.stringify(data),
+              success: function(r){
+                if(r.code === 0){
+                alert("报名成功")
+                location.href="user.html?tab=2";
+              }else{
+                alert(r.msg);
+              }
+            }
+          });
+        }
+      },
+      created: function(){
+        var id = T.p("id");
+        this.getActivity(id);
+        var user = localStorage.getItem("fuser");
+        if(user){
+          this.user = JSON.parse(user);
+        }
+      }
+	})
+	</script>
+  </body>
+</html>

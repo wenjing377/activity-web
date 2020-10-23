@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Star爱心志愿平台">
+
+    <link rel="shortcut icon" href="" type="image/x-icon">
+
+    <title>Star爱心志愿平台</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/carousel.css" rel="stylesheet">
+    <link href="assets/css/common.css" rel="stylesheet">
+    <style type="text/css">
+        body{
+            padding-top:70px;
+        }
+        .footer{
+            background-color: #e7e7e7;
+            position:relative;
+            height: 60px;
+            margin-bottom: -200px;
+            margin-top: 130px;
+        }
+        .p1{
+            text-align: center;
+            line-height: 50px;
+            color: #333333;
+        }
+    </style>
+</head>
+<!-- NAVBAR -->
+<body>
+<div id="app">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Star爱心志愿平台</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">首页 </a></li>
+                    <li><a href="list.html">志愿活动</a></li>
+                    <li class="active"><a href="mass.html">志愿组织</a></li>
+                    <li><a href="#">志愿之星</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right hidden-sm">
+                    <li v-if="user"><a href="user.html">个人中心，{{user.realName}}</a></li>
+                    <li v-if="user"><a href="#" @click="logout()" >退出</a></li>
+                    <li v-if="!user"><a href="login.html" >登录</a></li>
+                    <li v-if="!user"><a href="register.html" >注册</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+    <div class="container marketing">
+        <!-- Three categorys of text below the carousel-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-3" v-for="mass in masss">
+                    <div class="thumbnail activity-item" @click="detail(mass.id)">
+                        <img :src="mass.picUrl" alt="Generic placeholder image" width="300" height="200" style="width: 200px;height: 200px">
+                        <div class="caption">
+                            <h4>社团名称：{{mass.massName}}</h4>
+                            <p>创办时间：<span class="">{{mass.createTime}}</span></p>
+                            <p>联系人：<span class="">{{mass.contacts}}</span></p>
+                            <p>电话：<span class="">{{mass.mobile}}</span></p>
+                            <p>简介：<span class="">{{mass.remark}}</span></p>
+                        </div>
+                    </div>
+
+                </div><!-- /.col-lg-4 -->
+            </div>
+            <div class="page">
+                <ul class="pagination"></ul>
+            </div>
+        </div><!-- /.row -->
+    </div>
+
+    <!-- FOOTER -->
+    <footer style="text-align: center">
+        <p></p>
+    </footer>
+    <footer class="footer">
+        <p class="p1">Copyright@2020-2021 Designed by DUOLAAIMENGDUI</p>
+    </footer>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="https://cdn.bootcss.com/vue/2.6.8/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+<script src="assets/js/vendor/holder.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="assets/js/bootstrap-paginator.js"></script>
+<script src="assets/js/common.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            categorys: [],
+            masss: [],
+            user: null,
+            mass_name: -1,
+            status: -1,
+            type: -1,
+            category: -1,
+            page: 1,
+            pageSize: 8
+        },
+        methods: {
+            getActivity: function(){
+                var mass_name = this.mass_name;
+                var type = this.type;
+                var category = this.category;
+                var status = this.status;
+                var page = this.page
+                var pageSize = this.pageSize
+                $.getJSON(domain + "/api/mass/list", {type: type, category: category,mass_name: mass_name,status: status, page: page, limit: pageSize}, function(r){
+                    if(r.code == 0){
+                        app.masss = r.massList
+                    }
+                    var totalPage = r.total % app.pageSize == 0 ? r.total / app.pageSize : r.total / app.pageSize + 1
+                    app.setPage(totalPage)
+                })
+            },
+
+            setPage: function(pageSum){
+                $(".pagination").bootstrapPaginator({
+                    //设置版本号
+                    bootstrapMajorVersion: 3,
+                    // 显示第几页
+                    currentPage: app.page,
+                    // 总页数
+                    totalPages: pageSum,
+                    //当单击操作按钮的时候, 执行该函数, 调用ajax渲染页面
+                    onPageClicked: function (event,originalEvent,type,page) {
+                        // 把当前点击的页码赋值给currentPage, 调用ajax,渲染页面
+                        app.page = page
+                        app.getActivity()
+                    }
+                })
+            },
+
+
+            typeChange: function(e){
+                console.log(e)
+            },
+
+            detail: function(id){
+                //location.href="detail.html?id="+id;
+            },
+
+            logout: function(){
+                localStorage.removeItem("fuser");
+                app.user = null;
+            }
+
+        },
+        created: function(){
+            var storeId = T.p("storeId");
+            this.getActivity();
+            var user = localStorage.getItem("fuser");
+            if(user){
+                this.user = JSON.parse(user);
+            }
+        }
+    })
+</script>
+</body>
+</html>

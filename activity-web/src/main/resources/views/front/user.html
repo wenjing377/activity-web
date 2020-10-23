@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>个人信息</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+  <!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <script src="assets/js/ie-emulation-modes-warning.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Custom styles for this template -->
+  <link href="assets/css/carousel.css" rel="stylesheet">
+  <link href="assets/css/common.css" rel="stylesheet">
+   <style type="text/css">
+      body{
+      	padding-top:70px;
+      }
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Star爱心志愿平台</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right hidden-sm">
+            <li v-if="user"><a href="user.html" >个人中心，{{user.realName}}</a></li>
+            <li v-if="user"><a href="#" @click="logout()" >退出</a></li>
+            <li v-if="!user"><a href="login.html" >登录</a></li>
+            <li v-if="!user"><a href="register.html" >注册</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+    <div class="container marketing">
+      <!-- Three columns of text below the carousel-->
+  
+    <div class="row">
+    	<div class="col-md-3">
+    		<div class="list-group">
+			  <a href="#" @click="tabItem(1)" class="list-group-item">
+			    个人信息
+			  </a>
+			  <a href="#" @click="tabItem(2)" class="list-group-item">
+			    我的报名信息
+			  </a>
+				<a href="#" @click="tabItem(3)" class="list-group-item">
+				志愿服务时间统计
+				</a>
+			</div>
+    	</div>
+
+			<div class="col-md-9">
+				<div style="width: 400px">
+					<div id="userinfo" v-if="tab == 1">
+						<div class="form-group">
+							<label for="realName">姓名</label>
+							<input class="form-control" id="realName" placeholder="姓名" v-model="user.realName">
+						</div>
+						<div class="form-group">
+							<label for="mobile">手机号码</label>
+							<input class="form-control" id="mobile" placeholder="手机号码" v-model="user.mobile">
+						</div>
+						<div class="form-group">
+							<label for="userNo">学号</label>
+							<input class="form-control" id="userNo" placeholder="学号" v-model="user.userNo">
+						</div>
+						<div class="form-group">
+							<label for="schoolName">学院名称</label>
+							<input class="form-control" id="schoolName" placeholder="学院名称" v-model="user.schoolName">
+						</div>
+						<div class="form-group">
+							<label for="className">班级</label>
+							<input class="form-control" id="className" placeholder="班级" v-model="user.className">
+						</div>
+						<div class="form-group">
+							<label for="email">邮箱</label>
+							<input class="form-control" id="email" placeholder="邮箱" v-model="user.email">
+						</div>
+						<button @click="saveUser" class="btn btn-primary">保存</button>
+					</div>
+				</div>
+
+
+				<div id="orderinfo" v-if="tab == 2">
+					<table class="table">
+						<thead>
+						<tr>
+							<th>活动</th>
+							<th>图片</th>
+							<th>姓名</th>
+							<th>手机号码</th>
+							<th>报名时间</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr v-for="order in activityJoinList">
+							<td>{{order.activity.title}}</td>
+							<td><img alt="" :src="order.activity.picUrl" width="100" height="100"></td>
+							<td>{{order.user.realName}}</td>
+							<td>{{order.user.mobile}}</td>
+							<td>{{order.createTime}}</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="timeinfo" v-if="tab == 3">
+					<table class="table">
+						<thead>
+						<tr>
+							<th>活动</th>
+							<th>主办社团名称</th>
+							<th>报名时间</th>
+							<th>志愿服务时长</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr v-for="order in activityJoinList">
+							<td>{{order.activity.title}}</td>
+							<td>{{order.activity.massName}}</td>
+							<td>{{order.createTime}}</td>
+							<td>{{order.activity.volunteerTime}}</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+
+    </div>
+    
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">评价</h4>
+	      </div>
+	      <div class="modal-body">
+	         <textarea rows="" cols="" placeholder="评价内容" class="form-control" v-model="evaluate.content">
+		      
+		      </textarea>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <button type="button" class="btn btn-primary">保存</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+   </div>
+   
+    <!-- FOOTER -->
+    <footer style="text-align: center">
+      <p></p>
+    </footer>
+
+  </div>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="https://cdn.bootcss.com/vue/2.6.8/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+<script src="assets/js/vendor/holder.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="assets/js/common.js"></script>
+<script type="text/javascript">
+
+var app = new Vue({
+	el:'#app',
+	data:{
+		user: null,
+		tab: 1,
+		activityJoinList: [],
+		evaluate: {}
+	},
+	beforeCreate: function(){
+		if(self != top){
+			top.location.href = self.location.href;
+		}
+	},
+	methods: {
+		tabItem: function(i){
+			app.tab = i;
+			if(i == 2){
+				app.getOrder();
+			}
+		},
+	    refreshCode: function(){
+	        this.src = "captcha.jpg?t=" + $.now();
+	    },
+	    getUser: function(){
+	    	
+	    },
+	    saveUser: function(){
+	    	var user = app.user;
+	    	$.ajax({
+	            type: "POST",
+	              url: domain + "/api/user/update",
+	              contentType: "application/json",
+	              headers: {
+	                token: localStorage.getItem("ftoken")
+	              },
+	              data: JSON.stringify(user),
+	              success: function(r){
+	                if(r.code === 0){
+	                	alert("修改成功");
+	              }else{
+	                alert(r.msg);
+	              }
+	            }
+	          });
+	    },
+	    getOrder: function(){
+    	  $.ajax({
+            type: "GET",
+              url: domain + "/api/activity/myJoin",
+              contentType: "application/json",
+              headers: {
+                token: localStorage.getItem("ftoken")
+              },
+              data: {},
+              success: function(r){
+                app.activityJoinList = r.activityJoinList;
+            }
+          });
+	    },
+	    logout: function(){
+          localStorage.removeItem("fuser");
+          app.user = null;
+        },
+        evaluate: function(orderId, goodsId){
+        	$('#myModal').modal('toggle');
+        },
+	},
+	created: function(){
+		this.getUser();
+		var tab = T.p("tab");
+		if(tab){
+			this.tab = tab;
+			this.getOrder();
+		}
+		var user = localStorage.getItem("fuser");
+        if(user){
+          this.user = JSON.parse(user);
+        }
+	}
+});
+</script>
+</body>
+</html>
