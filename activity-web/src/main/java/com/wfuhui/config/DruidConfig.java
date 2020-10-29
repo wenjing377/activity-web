@@ -18,13 +18,7 @@ import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Druid配置
- *
- * @author lzl
- * @email 2803180149@qq.com
- * @date 2017-04-21 0:00
- */
+
 @Configuration
 public class DruidConfig {
     private Logger logger = LoggerFactory.getLogger(DruidConfig.class);

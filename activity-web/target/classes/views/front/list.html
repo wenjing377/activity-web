@@ -67,7 +67,7 @@
 					<li><a href="index.html">首页 </a></li>
 					<li class="active"><a href="list.html">志愿活动</a></li>
 					<li><a href="mass.html">志愿组织</a></li>
-					<li><a href="#">志愿之星</a></li>
+
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right hidden-sm">
@@ -122,52 +122,6 @@
 					<input type="radio" name="category" value="5" v-model="category" @change="getActivity"> 其他
 				</label>
 			</div>
-			<div class="col-md-12">
-				<label class="radiobox-inline">
-					活动组织：
-				</label>
-				<label class="radiobox-inline">
-					<input type="radio" checked="checked" name="mass_name" value="-1" v-model="mass_name" @change="getActivity"> 全部
-				</label>
-				<label class="radiobox-inline">
-					<input type="radio" name="mass_name" value="阳光青协社" v-model="mass_name" @change="getActivity">阳光青协社
-				</label>
-				<label class="radiobox-inline">
-					<input type="radio" name="mass_name" value="志翔社" v-model="mass_name" @change="getActivity">志翔社
-				</label>
-				<label class="radiobox-inline">
-					<input type="radio" name="mass_name" value="龙传公益社" v-model="mass_name" @change="getActivity">龙传公益社
-				</label>
-				<label class="radiobox-inline">
-					<input type="radio" name="mass_name" value="荧光社" v-model="mass_name" @change="getActivity">荧光社
-				</label>
-				<label class="radiobox-inline">
-					<input type="radio" name="mass_name" value="海燕爱心社" v-model="mass_name" @change="getActivity">海燕爱心社
-				</label>
-				<label class="radiobox-inline">
-					<input type="radio" name="mass_name" value="东方志愿者协会" v-model="mass_name" @change="getActivity">东方志愿者协会
-				</label>
-				<label class="radiobox-inline">
-					<input type="radio" name="mass_name" value="爱云支教协会" v-model="mass_name" @change="getActivity">爱云支教协会
-				</label>
-				<label class="radiobox-inline">
-					<input type="radio" name="mass_name" value="狗狗托儿所" v-model="mass_name" @change="getActivity">狗狗托儿所
-				</label>
-			</div>
-			<div class="col-md-12">
-				<label class="radiobox-inline">
-					活动状态：
-				</label>
-				<label class="radiobox-inline">
-					<input type="radio" checked="checked" name="enable" value="-1" v-model="status" @change="getActivity"> 全部
-				</label>
-				<label class="radiobox-inline">
-					<input type="radio" name="enable" value="1" v-model="status" @change="getActivity"> 进行中
-				</label>
-				<label class="radiobox-inline">
-					<input type="radio" name="enable" value="2" v-model="status" @change="getActivity"> 已结束
-				</label>
-			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
@@ -178,6 +132,7 @@
 							<h4>{{activity.title}}</h4>
 							<p>招募人数：<span class="price">{{activity.totalNumber}}</span>人</p>
 							<p>已报名人数：<span class="price">{{activity.joinNumber}}</span>人</p>
+							<p>社团名称：<span>{{activity.massName}}</span></p>
 							<!--<p>活动状态：<span class="price">{{activity.status1}}</span></p>-->
 						</div>
 					</div>
@@ -222,6 +177,7 @@
 			mass_name: -1,
 			status: -1,
 			type: -1,
+			flag:1,
 			category: -1,
 			page: 1,
 			pageSize: 8
@@ -231,10 +187,11 @@
 				var mass_name = this.mass_name;
 				var type = this.type;
 				var category = this.category;
+				var flag=this.flag;
 				var status = this.status;
 				var page = this.page
 				var pageSize = this.pageSize
-				$.getJSON(domain+"/api/activity/list", {type: type, category: category,mass_name: mass_name,status: status, page: page, limit: pageSize}, function(r){
+				$.getJSON(domain+"/api/activity/list", {type: type, category: category,mass_name: mass_name,status: status, page: page, limit: pageSize,flag:flag}, function(r){
 					if(r.code == 0){
 						app.activitys = r.activityList
 					}

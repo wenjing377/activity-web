@@ -14,7 +14,15 @@ public interface BaseDao<T> {
 	void save(T t);
 	
 	void save(Map<String, Object> map);
-	
+	int Tongguo(Object id);
+	int Tongguo(Map<String, Object> map);
+
+	int TongguoBatch(Object[] id);
+	int Nopass(Object id);
+	int Nopass(Map<String, Object> map);
+
+	int NopassBatch(Object[] id);
+
 	void saveBatch(List<T> list);
 	
 	int update(T t);

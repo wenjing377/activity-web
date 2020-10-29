@@ -3,18 +3,10 @@ package com.wfuhui.common.xss;
 import com.wfuhui.common.exception.RRException;
 import org.apache.commons.lang.StringUtils;
 
-/**
- * SQL过滤
- * @author lzl
- * @email 2803180149@qq.com
- * @date 2017-04-01 16:16
- */
+
 public class SQLFilter {
 
-    /**
-     * SQL注入过滤
-     * @param str  待验证的字符串
-     */
+
     public static String sqlInject(String str){
         if(StringUtils.isBlank(str)){
             return null;

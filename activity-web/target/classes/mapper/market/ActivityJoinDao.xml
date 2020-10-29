@@ -151,4 +151,24 @@
 			#{id}
 		</foreach>
 	</update>
+	<update id="TongguoBatch">
+		update a_activity
+		<set>
+			`flag` = 1
+		</set>
+		where id in
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</update>
+	<update id="NopassBatch">
+		update a_activity
+		<set>
+			`flag` = 2
+		</set>
+		where id in
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</update>
 </mapper>

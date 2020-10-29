@@ -107,5 +107,17 @@ public class ActivityController extends AbstractController{
 
 		return R.ok();
 	}
+	@RequestMapping("/Tongguo")
+	public R Tongguo(@RequestBody Integer[] ids){
+		activityService.TongguoBatch(ids);
+
+		return R.ok();
+	}
+	@RequestMapping("/Nopass")
+	public R Nopass(@RequestBody Integer[] ids){
+		activityService.NopassBatch(ids);
+
+		return R.ok();
+	}
 	
 }

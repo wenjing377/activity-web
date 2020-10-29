@@ -11,12 +11,13 @@
 		<result property="endTime" column="end_time"/>
 		<result property="status" column="status"/>
 		<result property="type" column="type"/>
+		<result property="flag" column="flag"/>
 		<result property="category" column="category"/>
 		<result property="createTime" column="create_time"/>
 		<result property="totalNumber" column="total_number"/>
 		<result property="storeId" column="store_id"/>
 		<result property="picUrl" column="pic_url"/>
-		<result property="mass_name" column="mass_name"/>
+		<result property="massName" column="mass_name"/>
 		<result property="schoolName" column="school_name"/>
 		<result property="resultPicUrl" column="result_pic_url"/>
 		<result property="categoryId" column="category_id"/>
@@ -24,45 +25,48 @@
 	</resultMap>
 
 	<select id="queryObject" resultType="com.wfuhui.modules.market.entity.ActivityEntity">
-		select *, (select count(1) from a_activity_join where activity_id = a.id) joinNumber from a_activity a where id = #{value}
+		select a.*, m.mass_name, (select count(1) from a_activity_join where activity_id = a.id) joinNumber from a_activity a left join a_mass m on a.store_id = m.id where a.id = #{value}
 	</select>
 
 	<select id="queryOne" resultType="com.wfuhui.modules.market.entity.ActivityEntity">
-		select *, (select count(1) from a_activity_join where activity_id = a.id) joinNumber from a_activity a
+		select a.*, m.mass_name, (select count(1) from a_activity_join where activity_id = a.id) joinNumber from a_activity a left join a_mass m on a.store_id = m.id
 		<where>
 			<if test="storeId != null">
-				and store_id = #{storeId}
+				and a.store_id = #{storeId}
 			</if>
 			<if test="status != null">
-				and status = #{status}
+				and a.status = #{status}
 			</if>
 			<if test="categoryId != null">
-				and category_id = #{categoryId}
+				and a.category_id = #{categoryId}
 			</if>
 		</where>
 		limit 1
 	</select>
 
 	<select id="queryList" resultType="com.wfuhui.modules.market.entity.ActivityEntity">
-		select *, (select count(1) from a_activity_join where activity_id = a.id) joinNumber from a_activity a
+		select a.*, m.mass_name, (select count(1) from a_activity_join where activity_id = a.id) joinNumber from a_activity a left join a_mass m on a.store_id = m.id
 		<where>
 			<if test="storeId != null">
-				and store_id = #{storeId}
+				and a.store_id = #{storeId}
 			</if>
-			<if test="mass_name != null and mass_name != -1">
-				and mass_name= #{mass_name}
+			<if test="flag!=null">
+				and flag=1
+			</if>
+			<if test="massName != null and massName != -1">
+				and a.mass_name= #{mass_name}
 			</if>
 			<if test="type != null and type != -1">
-				and type = #{type}
+				and a.type = #{type}
 			</if>
 			<if test="category != null and category != -1">
-				and category = #{category}
+				and a.category = #{category}
 			</if>
 			<!--<if test="status != null and status != -1">
 				and status = #{status}
 			</if>-->
 			<if test="categoryId != null">
-				and category_id = #{categoryId}
+				and a.category_id = #{categoryId}
 			</if>
 		</where>
 		<choose>
@@ -70,7 +74,7 @@
 				order by ${sidx} ${order}
 			</when>
 			<otherwise>
-				order by id desc
+				order by a.id desc
 			</otherwise>
 		</choose>
 		<if test="offset != null and limit != null">
@@ -130,6 +134,7 @@
 			`end_time`,
 			`status`,
 			`type`,
+			`flag`,
 			`category`,
 			`create_time`,
 			`total_number`,
@@ -149,11 +154,12 @@
 			#{endTime},
 			#{status},
 			#{type},
+			#{flag},
 			#{category},
 			#{createTime},
 			#{totalNumber},
 			#{categoryId},
-			#{mass_name},
+			#{massName},
 			#{schoolName},
 			#{resultPicUrl},
 			#{storeId},
@@ -175,7 +181,7 @@
 			<if test="createTime != null">`create_time` = #{createTime}, </if>
 			<if test="totalNumber != null">`total_number` = #{totalNumber}, </if>
 			<if test="categoryId != null">`category_id` = #{categoryId}, </if>
-			<if test="mass_name != null">`mass_name` = #{mass_name}, </if>
+			<if test="massName != null">`mass_name` = #{massName}, </if>
 			<if test="schoolName != null">`school_name` = #{schoolName}, </if>
 			<if test="resultPicUrl != null">`result_pic_url` = #{resultPicUrl}, </if>
 			<if test="storeId != null">`store_id` = #{storeId},</if>
@@ -206,6 +212,26 @@
 		update a_activity_join
 		<set>
 			`status` = 1
+		</set>
+		where id in
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</update>
+	<update id="TongguoBatch">
+		update a_activity
+		<set>
+			`flag` = 1
+		</set>
+		where id in
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</update>
+	<update id="NopassBatch">
+		update a_activity
+		<set>
+			`flag` = 2
 		</set>
 		where id in
 		<foreach item="id" collection="array" open="(" separator="," close=")">

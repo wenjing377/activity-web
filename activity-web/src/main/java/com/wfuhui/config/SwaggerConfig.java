@@ -20,20 +20,12 @@ public class SwaggerConfig {
     public Docket buildDocket() {
         return new Docket(DocumentationType.SWAGGER_2)
         		.groupName("mall-api")
-                .apiInfo(buildApiInf())
+
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.wfuhui.modules.api"))
                 .paths(PathSelectors.any())
                 .build();
 	}
 
-    private ApiInfo buildApiInf() {  
-        return new ApiInfoBuilder()  
-                .title("mall-api RESTFUL APIS")
-                .description("Copyright © 2018, wfuhui. All Rights Reserved.")
-                .contact(new Contact("微服汇", "http://www.wfuhui.com", "1397593242@qq.com"))
-                .termsOfServiceUrl("http://www.wfuhui.com")  
-                .version("1.0.0-SNAPSHOT")
-                .build();  
-    }
+
 }

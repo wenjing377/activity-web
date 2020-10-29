@@ -56,6 +56,16 @@ public class ActivityServiceImpl implements ActivityService {
 
 	@Override
 	public void changestatusBatch(Integer[] ids) {activityDao.changestatusBatch(ids); }
+	@Override
+	public void Tongguo(Integer id) {activityDao.Tongguo(id); }
+
+	@Override
+	public void TongguoBatch(Integer[] ids) {activityDao.TongguoBatch(ids); }
+	@Override
+	public void Nopass(Integer id) {activityDao.Nopass(id); }
+
+	@Override
+	public void NopassBatch(Integer[] ids) {activityDao.NopassBatch(ids); }
 
 
 	@Override

@@ -1,4 +1,4 @@
-var domain = "http://localhost:10001";
+var domain = "http://49.235.39.4:10001";
 var storeId = 1;
 window.T = {};
 var url = function(name) {

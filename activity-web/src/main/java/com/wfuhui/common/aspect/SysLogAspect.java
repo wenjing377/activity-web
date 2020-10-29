@@ -21,13 +21,6 @@ import java.lang.reflect.Method;
 import java.util.Date;
 
 
-/**
- * 系统日志，切面处理类
- * 
- * @author lzl
- * @email 2803180149@qq.com
- * @date 2017年3月8日 上午11:07:35
- */
 @Aspect
 @Component
 public class SysLogAspect {

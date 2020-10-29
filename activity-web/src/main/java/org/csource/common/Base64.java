@@ -2,56 +2,7 @@ package org.csource.common;
 
 import java.io.IOException;
 
-/**
- * Freeware from:
- * Roedy Green
- * Canadian Mind Products
- * #327 - 964 Heywood Avenue
- * Victoria, BC Canada V8V 2Y5
- * tel:(250) 361-9093
- * mailto:roedy@mindprod.com
- */
 
-/**
- * Encode arbitrary binary into printable ASCII using BASE64 encoding.
- * very loosely based on the Base64 Reader by
- * Dr. Mark Thornton
- * Optrak Distribution Software Ltd.
- * http://www.optrak.co.uk
- * and Kevin Kelley's  http://www.ruralnet.net/~kelley/java/Base64.java
- *
- * Base64 is a way of encoding 8-bit characters using only ASCII printable
- * characters similar to UUENCODE.  UUENCODE includes a filename where BASE64 does not.
- * The spec is described in RFC 2045.  Base64 is a scheme where
- * 3 bytes are concatenated, then split to form 4 groups of 6-bits each; and
- * each 6-bits gets translated to an encoded printable ASCII character, via a
- * table lookup.  An encoded string is therefore longer than the original by
- * about 1/3.  The "=" character is used to pad the end.  Base64 is used,
- * among other things, to encode the user:password string in an
- * Authorization: header for HTTP.  Don't confuse Base64 with
- * x-www-form-urlencoded which is handled by
- * Java.net.URLEncoder.encode/decode
- * If you don't like this code, there is another implementation at http://www.ruffboy.com/download.htm
- * Sun has an undocumented method called sun.misc.Base64Encoder.encode.
- * You could use hex, simpler to code, but not as compact.
- *
- * If you wanted to encode a giant file, you could do it in large chunks that
- * are even multiples of 3 bytes, except for the last chunk, and append the outputs.
- *
- * To encode a string, rather than binary data java.net.URLEncoder may be better. See
- * printable characters in the Java glossary for a discussion of the differences.
- *
- * version 1.4 2002 February 15  -- correct bugs with uneven line lengths,
- *                                  allow you to configure line separator.
- *                                  now need Base64 object and instance methods.
- *                                  new mailing address.
- * version 1.3 2000 September 12 -- fix problems with estimating output length in encode
- * version 1.2 2000 September 09 -- now handles decode as well.
- * version 1.1 1999 December 04 -- more symmetrical encoding algorithm.
- *                                 more accurate StringBuffer allocation size.
- * version 1.0 1999 December 03 -- posted in comp.lang.java.programmer.
- * Futures Streams or files.
- */
 
 public class Base64
 {

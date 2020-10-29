@@ -8,13 +8,6 @@ import org.springframework.dao.DuplicateKeyException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-/**
- * 异常处理器
- * 
- * @author lzl
- * @email 2803180149@qq.com
- * @date 2016年10月27日 下午10:16:19
- */
 @RestControllerAdvice
 public class RRExceptionHandler {
 	private Logger logger = LoggerFactory.getLogger(getClass());

@@ -18,6 +18,16 @@ $(function () {
 		{ title: '活动人数', field: 'totalNumber' },
 		{ title: '志愿服务时间', field: 'volunteerTime' },
 		{ title: '已报名人数', field: 'joinNumber' },
+		{title:'审核状态',field:'flag', formatter: function(value, options, row){
+				if(value==1){
+					return '<span class="label label-success">通过</span>';
+				}else if(value==2){
+					return '<span class="label label-danger">不通过</span>';
+				}else {
+					return '<span class="label label-info">未审核</span>';
+				}
+			}
+		},
 		{ title: '创建时间', field: 'createTime', formatter: function(value, options, row){ return formatTime(value); }},
 	]
 

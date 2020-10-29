@@ -13,9 +13,6 @@ import org.springframework.context.annotation.Configuration;
 import java.net.InetSocketAddress;
 import java.util.List;
 
-/**
- * Created by Glenn on 2017/5/18 0018.
- */
 
 //@Configuration("FastDFSConfig")
 //@EnableCaching//启用缓存的意思

@@ -1,146 +1,146 @@
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\market\api\ApiMassController.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\api\service\TokenService.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\controller\SysLoginController.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\xss\XssHttpServletRequestWrapper.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\config\DruidConfig.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\org\csource\fastdfs\TrackerClient.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\api\annotation\AuthIgnore.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\utils\IPUtils.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\timer\ActivityTimer.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\service\impl\SysRoleServiceImpl.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\org\csource\fastdfs\StructBase.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\api\config\UeditorConfig.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\service\SysUserService.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\org\csource\fastdfs\StructStorageStat.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\utils\PageUtils.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\base\controller\UserController.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\dao\SysUserRoleDao.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\base\dao\UserDao.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\config\FastDFSConfig.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\config\KaptchaConfig.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\service\SysLogService.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\market\entity\ActivityJoinEntity.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\org\csource\fastdfs\StorageClient.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\xss\HTMLFilter.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\market\service\ActivityService.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\api\dao\TokenDao.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\base\entity\UserEntity.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\service\impl\SysMenuServiceImpl.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\service\SysRoleService.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\oauth2\OAuth2Realm.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\validator\group\UpdateGroup.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\dao\SysDictDao.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\oauth2\OAuth2Filter.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\entity\SysUserTokenEntity.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\dao\BaseDao.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\service\impl\SysRoleMenuServiceImpl.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\api\service\impl\TokenServiceImpl.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\utils\SpringContextUtils.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\api\annotation\LoginUser.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\oauth2\TokenGenerator.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\market\dao\ActivityDao.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\controller\SysMenuController.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\org\csource\fastdfs\UploadStream.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\service\SysMenuService.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\api\controller\ApiLoginController.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\service\SysUserTokenService.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\entity\SysMenuEntity.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\org\csource\fastdfs\ClientGlobal.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\org\csource\fastdfs\DownloadCallback.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\org\csource\fastdfs\TrackerGroup.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\dao\SysRoleDao.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\service\SysConfigService.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\market\controller\ActivityController.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\utils\DateUtils.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\validator\group\AddGroup.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\api\resolver\LoginUserHandlerMethodArgumentResolver.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\market\controller\ActivityJoinController.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\exception\RRException.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\base\service\impl\UserServiceImpl.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\market\api\ApiActivityController.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\service\impl\SysUserRoleServiceImpl.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\utils\Query.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\xss\SQLFilter.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\xss\XssFilter.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\utils\ConfigConstant.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\service\impl\SysUserServiceImpl.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\oauth2\OAuth2Token.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\org\csource\fastdfs\StructGroupStat.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\org\csource\fastdfs\DownloadStream.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\market\service\MassService.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\api\interceptor\AuthorizationInterceptor.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\market\service\impl\MassServiceImpl.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\controller\SysDictController.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\validator\Assert.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\service\impl\SysLogServiceImpl.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\entity\SysConfigEntity.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\api\config\WebMvcConfig.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\market\service\ActivityJoinService.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\org\csource\common\NameValuePair.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\org\csource\fastdfs\FileInfo.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\market\entity\ActivityEntity.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\market\entity\MassEntity.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\entity\SysUserEntity.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\entity\SysRoleMenuEntity.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\market\service\impl\ActivityServiceImpl.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\entity\SysDictEntity.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\org\csource\common\MyException.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\service\SysUserRoleService.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\org\csource\fastdfs\ProtoStructDecoder.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\dao\SysRoleMenuDao.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\controller\SysLogController.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\utils\Constant.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\validator\group\QcloudGroup.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\dao\SysUserDao.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\controller\SysConfigController.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\validator\group\Group.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\dao\SysUserTokenDao.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\org\csource\fastdfs\UploadCallback.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\config\FilterConfig.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\api\entity\TokenEntity.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\config\SwaggerConfig.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\base\service\UserService.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\aspect\SysLogAspect.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\utils\ShiroUtils.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\service\SysDictService.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\utils\HttpContextUtils.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\base\utils\PicUrlJsonSerializer.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\market\dao\ActivityJoinDao.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\validator\group\AliyunGroup.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\api\utils\OrderNumUtil.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\service\impl\SysDictServiceImpl.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\dao\SysLogDao.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\dao\SysConfigDao.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\api\controller\ApiFileUploadController.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\api\controller\ApiUeditorController.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\validator\group\QiniuGroup.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\controller\AbstractController.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\WfuhuiApplication.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\validator\ValidatorUtils.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\market\controller\MassController.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\service\impl\SysUserTokenServiceImpl.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\controller\SysRoleController.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\org\csource\fastdfs\StorageServer.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\exception\RRExceptionHandler.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\org\csource\common\IniFileReader.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\entity\SysUserRoleEntity.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\org\csource\common\Base64.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\org\csource\fastdfs\ProtoCommon.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\market\service\impl\ActivityJoinServiceImpl.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\base\utils\OrderStatus.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\config\ShiroConfig.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\org\csource\fastdfs\TrackerServer.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\entity\SysLogEntity.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\service\ShiroService.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\annotation\SysLog.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\market\dao\MassDao.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\entity\SysRoleEntity.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\dao\SysMenuDao.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\service\impl\ShiroServiceImpl.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\common\utils\R.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\controller\SysUserController.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\service\impl\SysConfigServiceImpl.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\sys\service\SysRoleMenuService.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\com\wfuhui\modules\api\controller\ApiUserController.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\org\csource\fastdfs\ServerInfo.java
-F:\idea\IntelliJ IDEA 2020.2.1\work\activity-web3\activity-web\src\main\java\org\csource\fastdfs\StorageClient1.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\api\dao\TokenDao.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\utils\SpringContextUtils.java
+G:\大四学期\Learning\activity-web\src\main\java\org\csource\fastdfs\ServerInfo.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\api\controller\ApiLoginController.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\base\service\impl\UserServiceImpl.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\xss\XssHttpServletRequestWrapper.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\service\impl\ShiroServiceImpl.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\market\api\ApiMassController.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\dao\SysMenuDao.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\service\SysDictService.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\config\DruidConfig.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\dao\SysRoleMenuDao.java
+G:\大四学期\Learning\activity-web\src\main\java\org\csource\fastdfs\ProtoStructDecoder.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\utils\R.java
+G:\大四学期\Learning\activity-web\src\main\java\org\csource\common\IniFileReader.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\validator\group\QcloudGroup.java
+G:\大四学期\Learning\activity-web\src\main\java\org\csource\fastdfs\StructBase.java
+G:\大四学期\Learning\activity-web\src\main\java\org\csource\fastdfs\UploadStream.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\controller\SysRoleController.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\validator\group\AliyunGroup.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\config\ShiroConfig.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\dao\BaseDao.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\utils\ConfigConstant.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\service\impl\SysConfigServiceImpl.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\oauth2\OAuth2Token.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\utils\DateUtils.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\service\SysRoleMenuService.java
+G:\大四学期\Learning\activity-web\src\main\java\org\csource\fastdfs\ProtoCommon.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\service\SysUserRoleService.java
+G:\大四学期\Learning\activity-web\src\main\java\org\csource\fastdfs\TrackerServer.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\xss\XssFilter.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\validator\ValidatorUtils.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\market\dao\ActivityJoinDao.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\validator\Assert.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\service\SysUserTokenService.java
+G:\大四学期\Learning\activity-web\src\main\java\org\csource\fastdfs\StructGroupStat.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\api\utils\OrderNumUtil.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\api\config\WebMvcConfig.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\entity\SysUserRoleEntity.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\service\impl\SysUserTokenServiceImpl.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\dao\SysUserDao.java
+G:\大四学期\Learning\activity-web\src\main\java\org\csource\fastdfs\DownloadCallback.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\entity\SysConfigEntity.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\base\controller\UserController.java
+G:\大四学期\Learning\activity-web\src\main\java\org\csource\fastdfs\StorageClient.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\entity\SysLogEntity.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\dao\SysUserRoleDao.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\service\impl\SysUserRoleServiceImpl.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\market\service\ActivityService.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\api\controller\ApiUserController.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\market\service\MassService.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\base\utils\PicUrlJsonSerializer.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\api\entity\TokenEntity.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\controller\SysUserController.java
+G:\大四学期\Learning\activity-web\src\main\java\org\csource\fastdfs\DownloadStream.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\api\service\TokenService.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\api\config\UeditorConfig.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\controller\AbstractController.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\aspect\SysLogAspect.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\service\SysLogService.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\market\controller\MassController.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\service\impl\SysRoleMenuServiceImpl.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\base\dao\UserDao.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\api\annotation\LoginUser.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\api\resolver\LoginUserHandlerMethodArgumentResolver.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\service\impl\SysDictServiceImpl.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\api\service\impl\TokenServiceImpl.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\utils\HttpContextUtils.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\market\controller\ActivityController.java
+G:\大四学期\Learning\activity-web\src\main\java\org\csource\common\Base64.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\utils\IPUtils.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\entity\SysRoleMenuEntity.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\market\entity\ActivityEntity.java
+G:\大四学期\Learning\activity-web\src\main\java\org\csource\common\MyException.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\market\api\ApiActivityController.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\base\service\UserService.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\dao\SysDictDao.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\base\entity\UserEntity.java
+G:\大四学期\Learning\activity-web\src\main\java\org\csource\fastdfs\TrackerGroup.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\entity\SysMenuEntity.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\service\SysRoleService.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\controller\SysConfigController.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\timer\ActivityTimer.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\xss\HTMLFilter.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\config\FastDFSConfig.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\service\impl\SysMenuServiceImpl.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\oauth2\OAuth2Realm.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\validator\group\QiniuGroup.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\service\SysUserService.java
+G:\大四学期\Learning\activity-web\src\main\java\org\csource\fastdfs\TrackerClient.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\oauth2\TokenGenerator.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\exception\RRExceptionHandler.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\config\KaptchaConfig.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\service\SysMenuService.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\entity\SysDictEntity.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\entity\SysUserTokenEntity.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\service\impl\SysLogServiceImpl.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\exception\RRException.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\utils\PageUtils.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\market\service\impl\ActivityServiceImpl.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\xss\SQLFilter.java
+G:\大四学期\Learning\activity-web\src\main\java\org\csource\fastdfs\FileInfo.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\service\impl\SysUserServiceImpl.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\oauth2\OAuth2Filter.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\api\controller\ApiUeditorController.java
+G:\大四学期\Learning\activity-web\src\main\java\org\csource\fastdfs\StructStorageStat.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\service\impl\SysRoleServiceImpl.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\utils\ShiroUtils.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\controller\SysMenuController.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\validator\group\UpdateGroup.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\dao\SysConfigDao.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\base\utils\OrderStatus.java
+G:\大四学期\Learning\activity-web\src\main\java\org\csource\fastdfs\UploadCallback.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\market\entity\MassEntity.java
+G:\大四学期\Learning\activity-web\src\main\java\org\csource\fastdfs\StorageServer.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\market\dao\MassDao.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\controller\SysDictController.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\entity\SysRoleEntity.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\controller\SysLoginController.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\WfuhuiApplication.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\entity\SysUserEntity.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\dao\SysUserTokenDao.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\api\annotation\AuthIgnore.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\market\entity\ActivityJoinEntity.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\utils\Constant.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\market\service\ActivityJoinService.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\api\interceptor\AuthorizationInterceptor.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\service\SysConfigService.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\market\service\impl\MassServiceImpl.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\market\dao\ActivityDao.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\config\SwaggerConfig.java
+G:\大四学期\Learning\activity-web\src\main\java\org\csource\fastdfs\StorageClient1.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\controller\SysLogController.java
+G:\大四学期\Learning\activity-web\src\main\java\org\csource\fastdfs\ClientGlobal.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\validator\group\Group.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\annotation\SysLog.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\config\FilterConfig.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\utils\Query.java
+G:\大四学期\Learning\activity-web\src\main\java\org\csource\common\NameValuePair.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\dao\SysRoleDao.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\api\controller\ApiFileUploadController.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\service\ShiroService.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\market\service\impl\ActivityJoinServiceImpl.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\common\validator\group\AddGroup.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\sys\dao\SysLogDao.java
+G:\大四学期\Learning\activity-web\src\main\java\com\wfuhui\modules\market\controller\ActivityJoinController.java

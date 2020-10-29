@@ -16,7 +16,12 @@ public interface ActivityService {
 	List<ActivityEntity> queryList(Map<String, Object> map);
 	
 	int queryTotal(Map<String, Object> map);
-	
+	void Tongguo(Integer id);
+
+	void TongguoBatch(Integer[] ids);
+	void Nopass(Integer id);
+
+	void NopassBatch(Integer[] ids);
 	void save(ActivityEntity activity);
 	
 	void update(ActivityEntity activity);

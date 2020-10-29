@@ -46,11 +46,20 @@ public class ActivityEntity implements Serializable {
 
 	private Integer category;
 
-	private String mass_name;
+	private String massName;
 
 	private String schoolName;
 	private String adress;
 
+	public Integer getFlag() {
+		return flag;
+	}
+
+	public void setFlag(Integer flag) {
+		this.flag = flag;
+	}
+
+	private Integer flag;
 	private Integer volunteerTime;
 
 	public String getAdress() {
@@ -250,11 +259,11 @@ public class ActivityEntity implements Serializable {
 	}
 
 	public String getMassName() {
-		return mass_name;
+		return massName;
 	}
 
-	public void setMassName(String mass_name) {
-		this.mass_name = mass_name;
+	public void setMassName(String massName) {
+		this.massName = massName;
 	}
 
 	public String getSchoolName() {

@@ -1,10 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    <title>活动审核</title>
     <meta charset="UTF-8">
-    <title>审核活动</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/admin-lte/2.3.8/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/blueimp-file-upload/9.31.0/css/jquery.fileupload.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/admin-lte/2.3.8/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="../../../css/main.css">
 </head>
-<body>
+<body class="hold-transition skin-blue sidebar-mini">
+<div id="rrapp" v-cloak class="wrapper">
+    <main-header></main-header>
+    <main-sidebar></main-sidebar>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <content-header title="活动审核"></content-header>
+        <!-- Main content -->
+        <section class="content">
+            <div v-show="showList">
+                <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">列表</h3>
+                    </div><!-- /.box-header -->
+                    <div class="box-body">
+                        <c class="form-group">
 
+                            <div class="col-md-2">
+                                <select v-model="q.activityId" class="form-control">
+                                    <option value="">--活动--</option>
+                                    <option v-for="activity in activityList" :value="activity.id">{{activity.title}}</option>
+                                </select>
+                            </div>
+                            <a class="btn btn-default" @click="query"><i class="fa fa-search"></i>&nbsp;查询</a>
+                            <input type="button" class="btn btn-primary" @click="Tongguo" value="通过"/>
+                            <input type="button" class="btn btn-primary" @click="Nopass" value="不通过"/>
+                        </c>
+                    </div>
+                    <table id="table"></table>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    </section>
+</div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
+<script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/vue/2.2.6/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="https://cdn.bootcss.com/zTree.v3/3.5.26/js/jquery.ztree.all.min.js"></script>
+<script src="https://cdn.bootcss.com/admin-lte/2.3.8/js/app.min.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../js/components.js"></script>
+<script src="../../js/modules/market/activityexam.js"></script>
 </body>
 </html>
